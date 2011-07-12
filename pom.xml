@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.xsalefter.world</groupId>
+	<artifactId>world-project</artifactId>
+	<version>1.0.0.Alpha</version>
+	<packaging>pom</packaging>
+	
+	<name>World Database Project</name>
+	
+	<modules>
+        <module>world-entity</module>
+        <module>world-dao</module>
+        <module>world-service</module>
+    </modules>
+
+	<properties>
+	    <!-- Library Version -->
+		<bean.validation.version>1.0.0.GA</bean.validation.version>
+		<seam.version>3.0.0.Final</seam.version>
+		
+		<!-- Maven Plugin Version -->
+		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+		<maven.jdk.version>1.6</maven.jdk.version>
+		<eclipse.maven.plugin.version>2.8</eclipse.maven.plugin.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${bean.validation.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.seam</groupId>
+				<artifactId>seam-bom</artifactId>
+				<type>pom</type>
+				<scope>import</scope>
+				<version>${seam.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<build>
+	    <pluginManagement>
+	        <plugins>
+	            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${maven.jdk.version}</source>
+                        <target>${maven.jdk.version}</target>
+                    </configuration>
+                </plugin>
+	            
+	            <plugin>
+	            	<groupId>org.apache.maven.plugins</groupId>
+	            	<artifactId>maven-eclipse-plugin</artifactId>
+	            	<version>${eclipse.maven.plugin.version}</version>
+	            </plugin>
+	        </plugins>
+	    </pluginManagement>
+	</build>
+</project>
