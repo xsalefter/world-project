@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.xsalefter.world</groupId>
 	<artifactId>world-project</artifactId>
-	<version>1.0.0.Alpha</version>
+	<version>1.0.0.SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<name>World Database Project</name>
@@ -21,10 +21,6 @@
 		<bean.validation.version>1.0.0.GA</bean.validation.version>
 		<seam.version>3.0.0.Final</seam.version>
 		
-		<!-- Maven Plugin Version -->
-		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
-		<maven.jdk.version>1.6</maven.jdk.version>
-		<eclipse.maven.plugin.version>2.8</eclipse.maven.plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -61,25 +57,4 @@
 		</repository>
 	</repositories>
 	
-	<build>
-	    <pluginManagement>
-	        <plugins>
-	            <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven.compiler.plugin.version}</version>
-                    <configuration>
-                        <source>${maven.jdk.version}</source>
-                        <target>${maven.jdk.version}</target>
-                    </configuration>
-                </plugin>
-	            
-	            <plugin>
-	            	<groupId>org.apache.maven.plugins</groupId>
-	            	<artifactId>maven-eclipse-plugin</artifactId>
-	            	<version>${eclipse.maven.plugin.version}</version>
-	            </plugin>
-	        </plugins>
-	    </pluginManagement>
-	</build>
 </project>

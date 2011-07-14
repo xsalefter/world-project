@@ -5,13 +5,15 @@
 	<parent>
 		<artifactId>world-entity</artifactId>
 		<groupId>org.xsalefter.world</groupId>
-		<version>1.0.0.Alpha</version>
-		<relativePath>..</relativePath>
+		<version>1.0.0.SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
 	<artifactId>world-entity-country</artifactId>
+	<packaging>jar</packaging>
 	
 	<dependencies>
+	    
 	    <dependency>
 	        <groupId>org.hibernate</groupId>
 	        <artifactId>hibernate-core</artifactId>
@@ -21,19 +23,6 @@
 	        <groupId>javax.validation</groupId>
 	        <artifactId>validation-api</artifactId>
 	    </dependency>
+	    
 	</dependencies>
-	
-	<build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
